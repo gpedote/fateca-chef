@@ -27,7 +27,7 @@ Attributes
     <td><tt>/var/www/apps/fateca</tt></td>
   </tr>
   <tr>
-    <td><tt>['fateca']['repo']</tt></td>
+    <td><tt>['fateca']['repository']</tt></td>
     <td>String</td>
     <td>App origin repo</td>
     <td><tt>https://github.com/gpedote/fateca.git</tt></td>
@@ -54,7 +54,7 @@ Attributes
     <td><tt>['fateca']['submodules']</tt></td>
     <td>String</td>
     <td>Enables submodules</td>
-    <td><tt>false</tt></td>
+    <td><tt>true</tt></td>
   </tr>
   <tr>
     <td><tt>['fateca']['force_deploy']</tt></td>
