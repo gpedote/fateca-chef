@@ -35,5 +35,15 @@ application "fateca" do
         file "#{new_resource.path}/current/app/Console/cake" do
           mode '777'
         end
+
+        # Creates tmp directory
+        %w[ /tmp /tmp/cache /tmp/cache/models /tmp/cache/persistent /tmp/cache/views 
+            /tmp/logs /tmp/sessions /tmp/test ].each do |path|
+            directory "#{new_resource.path}/current/app" + path do
+                owner 'vagrant'
+                group 'vagrant'
+                mode '777'
+            end
+        end
     end
 end
