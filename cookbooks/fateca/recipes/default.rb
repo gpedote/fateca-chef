@@ -14,6 +14,13 @@ application "fateca" do
     revision node['fateca']['revision']
     enable_submodules node['fateca']['submodules']
     
+
+    # Forces deploy
+    if node['fateca']['force_deploy'] == true
+        action :force_deploy
+    end
+
+    # Enables virtual hosting
     mod_php_apache2 do
         webapp_template "fateca.conf.erb"
     end
