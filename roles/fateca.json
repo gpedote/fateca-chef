@@ -7,6 +7,7 @@
     "default_attributes": {},
     "run_list": [
         "role[base]",
+        "recipe[build-essential]",
         "recipe[xml]",
         "recipe[yum]",
         "role[mongodb]",
