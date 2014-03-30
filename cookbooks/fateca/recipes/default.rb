@@ -24,4 +24,16 @@ application "fateca" do
     mod_php_apache2 do
         webapp_template "fateca.conf.erb"
     end
+
+    after_restart do
+        # Add env variables
+        magic_shell_environment 'PATH' do
+          value "$PATH:#{new_resource.path}/current/app/Console"
+        end
+
+        # Changes cake console permission
+        file "#{new_resource.path}/current/app/Console/cake" do
+          mode '777'
+        end
+    end
 end
