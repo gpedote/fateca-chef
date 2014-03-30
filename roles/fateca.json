@@ -1,20 +1,18 @@
 {
-  "name": "fateca",
-  "chef_type": "role",
-  "chef_environment": "_default",
-  "json_class": "Chef::Role",
-  "description": "Fateca",
-  "override_attributes": {
-  },
-  "default_attributes": {},
-  "run_list": [
-    "role[base]",
-    "recipe[xml]",
-    "recipe[yum]",
-    "recipe[apache2]",
-    "role[mongodb]",
-    "recipe[git]",
-    "recipe[memcached]",
-    "recipe[fateca]"
-  ]
+    "name": "fateca",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Fateca",
+    "override_attributes": {},
+    "default_attributes": {},
+    "run_list": [
+        "role[base]",
+        "recipe[xml]",
+        "recipe[yum]",
+        "role[mongodb]",
+        "recipe[git]",
+        "recipe[apache2]",
+        "recipe[memcached]",
+        "recipe[fateca]"
+    ]
 }
