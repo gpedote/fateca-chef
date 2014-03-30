@@ -7,10 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 application "fateca" do
-    path "/var/www/apps/fateca/"
-    owner "vagrant"
-    group "vagrant"
-    repository "https://github.com/gpedote/fateca.git"
+    path node['fateca']['path']
+    owner node['fateca']['owner']
+    group node['fateca']['group']
+    repository node['fateca']['repository']
+    revision node['fateca']['revision']
+    enable_submodules node['fateca']['submodules']
     
     mod_php_apache2 do
         webapp_template "fateca.conf.erb"
