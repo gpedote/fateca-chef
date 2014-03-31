@@ -45,5 +45,13 @@ application "fateca" do
                 mode '777'
             end
         end
+
+        template "#{new_resource.path}/current/app/Config/database.php" do
+            source "database.php.erb"
+            cookbook "fateca"
+            owner new_resource.owner
+            group new_resource.group
+            mode "0664"
+        end
     end
 end

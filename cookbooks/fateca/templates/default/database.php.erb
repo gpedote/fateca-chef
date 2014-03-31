@@ -1,0 +1,36 @@
+<?php
+
+class DATABASE_CONFIG {
+
+    <% node['fateca']['databases'].each do |database| -%>
+        public $<%= database['connection'] %> = array(
+            <% if database['datasource'] %>
+                'datasource' => '<%= database['datasource'] %>',
+            <% end %>
+            <% if database['persistent'] %>
+                'persistent' => <%= database['persistent'] %>,
+            <% end %>
+            <% if database['host'] %>
+                'host' => '<%= database['host'] %>',
+            <% end %>
+            <% if database['login'] %>
+                'login' => '<%= database['login'] %>',
+            <% end %>
+            <% if database['password'] %>
+                'password' => '<%= database['password'] %>',
+            <% end %>
+            <% if database['database'] %>
+                'database' => '<%= database['database'] %>',
+            <% end %>
+            <% if database['prefix'] %>
+                'prefix' => '<%= database['prefix'] %>',
+            <% end %>
+            <% if database['port'] %>
+                'port' => '<%= database['port'] %>',
+            <% end %>
+            <% if database['encoding'] %>
+                'encoding' => '<%= database['encoding'] %>',
+            <% end %>
+        );
+    <% end -%>
+}
