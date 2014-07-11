@@ -1,0 +1,11 @@
+{
+    "name": "base",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Base Role for the VM",
+    "override_attributes": {},
+    "default_attributes": {},
+    "run_list": [
+        "recipe[apt]"
+    ]
+}
